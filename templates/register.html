@@ -4,81 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration form</title>
- <style>
+    <style>
+    /* Background of the whole page */
     body {
         font-family: Arial, sans-serif;
         background-color: #cccdf7;
-        margin: 0; padding: 0; 
-        } 
-    form {
-        width: 400px; 
-        margin: 80px auto; 
-        padding: 30px; 
-        background-color: rgb(254, 213, 231); 
-        border: 1px solid #ddd; 
-        border-radius: 15px; 
-        } 
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Heading */
     h1 {
-        text-align: center; 
-        color: #363636; 
-        font-size: 28px; 
-        margin-bottom: 30px; 
-        } 
+        text-align: center;
+        color: #363636;
+        font-size: 28px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    /* Registration form */
+    form {
+        width: 400px;
+        margin: 80px auto;
+        padding: 30px;
+        background-color: rgb(254, 213, 231);
+        border: 1px solid #ddd;
+        border-radius: 15px;
+    }
+
+    /* Labels */
     label {
-        display: block; 
-        margin-bottom: 8px; 
-        color: #8b3434; 
-        font-weight: bold; 
-        } 
-    input { 
-        width: 100%; 
-        padding: 12px; 
-        margin-bottom: 20px; 
-        box-sizing: border-box; 
-        border: 1px solid #bbb; 
-        border-radius: 7px; 
-        font-size: 14px; 
-        background-color: white;
-        } 
-    input:focus {
-        border-color: #8b3434; 
-        outline: none;
-        box-shadow: 0 0 5px rgba(139, 52, 52, 0.3); 
-        } 
-    button {
-        display: block; 
-        margin: 10px auto 0; 
-        padding: 12px 35px; 
-        background-color: #000000; 
-        color: white; 
-        border: none; 
-        border-radius: 7px; 
-        font-size: 16px; 
+        display: block;
+        margin-bottom: 8px;
+        color: #8b3434;
         font-weight: bold;
-        cursor: pointer; 
-        } 
-    button:hover {
+    }
+
+    /* Text input boxes */
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #bbb;
+        border-radius: 7px;
+        font-size: 14px;
+        background-color: white;
+    }
+
+    /* Input when selected */
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #8b3434;
+        outline: none;
+        box-shadow: 0 0 5px rgba(139, 52, 52, 0.3);
+    }
+
+    /* Buttons container */
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* Register and Reset buttons */
+    .buttons input[type="submit"],
+    .buttons button {
+        width: 140px;
+        height: 45px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+        background-color: #000000;
+        color: white;
+
+        border: none;
+        border-radius: 7px;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        cursor: pointer;
+    }
+
+    /* Hover effect */
+    .buttons input[type="submit"]:hover,
+    .buttons button:hover {
         background-color: #6f2929;
-        } 
-    button:active { 
-        transform: scale(0.97); 
-        }
+    }
+
+    /* Click effect */
+    .buttons input[type="submit"]:active,
+    .buttons button:active {
+        transform: scale(0.97);
+    }
 </style>
 </head>
 <body>    
     <h1>Employee Registration form</h1>                             
-    <form id="registrationform" action="login.html" method="GET">
+    <form id="registrationform" action="/register" method="POST">
          <label>Full name:</label>
-        <input id="fullname" type="text" placeholder="Enter your fullname" name="fullname">
+        <input id="fullname" type="text" placeholder="Enter your fullname" name="fullname" required>
         <br><br>
-        <label>Username/email:</label>
-        <input id="username" type="text" type="email" placeholder="Enter your username/email id" name="username">
+        <label>Username:</label>
+        <input id="username" type="text" placeholder="Enter your username" name="username" required>
         <br><br>
         <label>Password:</label>
-        <input  id="password" type="password" placeholder="Enter your password" name="password">
+        <input  id="password" type="password" placeholder="Enter your password" name="password" required>
         <br><br>
-        <Button type="submit" value="register">Register</Button>
-        <br></br>
+        <div class="buttons">
+        <input type="submit" value="Register">
+        <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+        <script>
+            function resetForm(){
+                document.getElementById("registrationform").reset();
+            }
+        </script>
     </form>
 </body>
 </html>
