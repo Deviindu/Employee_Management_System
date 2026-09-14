@@ -22,16 +22,65 @@ def create_database():
 
     connection.close()
 
+# -----------------------------------
+# Main Page
+# -----------------------------------
+
+
 @app.route("/")
 def home():
 
     return render_template("navbar.html")
+
+# -----------------------------------
+# Home Page
+# -----------------------------------
+
+@app.route("/home")
+def home_page():
+
+    return render_template("home.html")
+
+# -----------------------------------
+# Employee Page
+# -----------------------------------
+
+@app.route("/employee")
+def employee():
+
+    return render_template("employee.html")
+
+# -----------------------------------
+# Add Employee Page
+# -----------------------------------
+
+@app.route("/addemployee")
+def addemployee():
+
+    return render_template("addemployee.html")
+
+# -----------------------------------
+# Search Page
+# -----------------------------------
+
+@app.route("/search")
+def search():
+
+    return render_template("search.html")
+
+
+# -----------------------------------
+# Register Page
+# -----------------------------------
 
 @app.route("/register", methods=["GET"])
 def register_page():
 
     return render_template("register.html")
 
+# -----------------------------------
+# Register Path
+# -----------------------------------
 
 @app.route("/register", methods=["POST"])
 def register():
@@ -66,6 +115,9 @@ def register():
 
     return redirect("/login")
 
+# -----------------------------------
+# Login Page
+# -----------------------------------
 
 @app.route("/login", methods=["GET"])
 def login_page():
