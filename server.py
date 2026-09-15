@@ -45,19 +45,54 @@ def home_page():
 # Employee Page
 # -----------------------------------
 
-@app.route("/employee")
+@app.route("/employees")
 def employee():
 
-    return render_template("employee.html")
+    return render_template("employees.html")
 
 # -----------------------------------
 # Add Employee Page
 # -----------------------------------
 
-@app.route("/addemployee")
-def addemployee():
+@app.route("/add-employee",methods=["GET"])
+def add_employee_page():
 
-    return render_template("addemployee.html")
+    return render_template("add-employee.html") 
+
+@app.route("/add-employee",methods=["post"])
+def add_employee():
+    name=request.form["name"]
+    email=request.form["email"]
+    phone=request.form["phone"]
+    department=request.form["department"]
+    salary=request.form["salary"]
+    joining_date=request.form["joining_date"] 
+    address=request.form["address"] 
+
+    connection=sqlite3.connect("users.db")
+    cursor=connection.cursor()
+
+    cursor.execute("""
+        INSERT INTO employees
+        (name,email,phone,department,salary,joining_date,address
+        )
+        VALUES(?,?,?,?,?,?,?)
+        """,(
+        name,email,phone,department,salary,joining_date,address
+        ) )
+    connection.commit()
+    connection.close()
+
+    return """ 
+    <h2>Employee added successfully</h2>
+    <br>
+    <a href="/add-employee">Add Another Employee</a>
+    <br><br>
+
+    <a href="/">Go to Home</a>
+
+    """
+    
 
 # -----------------------------------
 # Search Page
