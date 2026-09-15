@@ -4,67 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-     <style>
+    <style>
+
     /* Background of the whole page */
     body {
         font-family: Arial, sans-serif;
-        background-color: #cccdf7;
+        background-color: #f2f2f2;
         margin: 0;
         padding: 0;
     }
-      /* Heading */
+
+    /* Login heading */
     h1 {
         text-align: center;
-        color: #363636;
+        color: #222;
         font-size: 28px;
-        margin-top: 0;
-        margin-bottom: 100px;
+        margin-top: 50px;
+        margin-bottom: 30px;
     }
-
 
     /* Login form */
     form {
         width: 400px;
-        margin: 80px auto;
+        margin: 0 auto;
         padding: 30px;
-        background-color: rgb(254, 213, 231);
+        background-color: white;
         border: 1px solid #ddd;
-        border-radius: 15px;
-    }
-
-    /* Message */
-    #message {
-        text-align: center;
-        font-weight: bold;
-        color: #8b3434;
-        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     /* Labels */
     label {
         display: block;
         margin-bottom: 8px;
-        color: #8b3434;
+        color: #222;
         font-weight: bold;
     }
 
     /* Input boxes */
-    input {
+    input[type="text"],
+    input[type="password"] {
         width: 100%;
         padding: 12px;
         margin-bottom: 20px;
         box-sizing: border-box;
         border: 1px solid #bbb;
-        border-radius: 7px;
+        border-radius: 5px;
         font-size: 14px;
         background-color: white;
     }
 
     /* Input when selected */
-    input:focus {
-        border-color: #8b3434;
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #00bcd4;
         outline: none;
-        box-shadow: 0 0 5px rgba(139, 52, 52, 0.3);
+        box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
     }
 
     /* Login button */
@@ -73,38 +69,46 @@
         width: auto;
         margin: 10px auto 0;
         padding: 12px 35px;
-        background-color: #000000;
+        background-color: #222;
         color: white;
-        border: none;
-        border-radius: 7px;
+        border: 1px solid #00bcd4;
+        border-radius: 5px;
         font-size: 16px;
         font-weight: bold;
         cursor: pointer;
     }
 
-    /* Button hover */
+    /* Login button hover */
     input[type="submit"]:hover {
-        background-color: #000000;
+        background-color: #00bcd4;
+        color: white;
     }
 
-    /* Button click */
+    /* Login button click */
     input[type="submit"]:active {
         transform: scale(0.97);
     }
-</style>
 
-    </head>
+    </style>
+
+</head>
+
 <body>
-     <h1>Login page</h1>
+    <h1>Login page</h1>
+
     <form action="/login" method="POST">
+
     <label>Username:</label>
     <input id="username" type="text"  placeholder="Enter your username" name="username" required >
     <br><br>
+
     <label>Password:</label>
     <input id="password" type="password" placeholder="Enter your password" name="password" required>
     <br><br>
+
     <input type="submit" value="login">
     <br></br>
+    
     </form>
 </body>
 </html>
