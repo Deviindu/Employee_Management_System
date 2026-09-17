@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Page</title>
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+
+        /* =====================================================
+           LIGHT MODE
+        ===================================================== */
+
+        body.light {
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        body.light .table-container {
+            background-color: white;
+            color: #222;
+        }
+
+        body.light td {
+            color: #222;
+            border-bottom: 1px solid #ddd;
+        }
+
+        body.light tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        body.light .no-employees {
+            color: #777;
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
+        body.dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.dark .table-container {
+            background-color: #1e1e1e;
+            color: white;
+
+            box-shadow:
+                0 2px 10px rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark td {
+            color: white;
+            border-bottom: 1px solid #444;
+        }
+
+        body.dark tbody tr:hover {
+            background-color: #2b2b2b;
+        }
+
+        body.dark .no-employees {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            background-color: #222;
+
+            padding: 15px 30px;
+
+            display: flex;
+            align-items: center;
+
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+            color: white;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            margin-right: auto;
+        }
+
+
+        /* =====================================================
+           NAVIGATION LINKS
+        ===================================================== */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+
+            list-style: none;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-btn {
+            border: 1px solid #00bcd4;
+
+            padding: 8px 15px;
+
+            border-radius: 5px;
+        }
+
+        .login-btn:hover {
+            background-color: #00bcd4;
+
+            color: white !important;
+        }
+
+
+        /* =====================================================
+           REGISTER BUTTON
+        ===================================================== */
+
+        .register-btn {
+            background-color: #00bcd4;
+
+            padding: 8px 15px;
+
+            border-radius: 5px;
+        }
+
+        .register-btn:hover {
+            background-color: #0097a7;
+
+            color: white !important;
+        }
+
+
+        /* =====================================================
+           THEME BUTTONS
+        ===================================================== */
+
+        .theme-buttons {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-right: 5px;
+        }
+
+        .theme-buttons a {
+            color: white;
+
+            text-decoration: none;
+
+            border: 1px solid #00bcd4;
+
+            padding: 8px 12px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .theme-buttons a:hover {
+            background-color: #00bcd4;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .container {
+            width: 92%;
+            max-width: 1400px;
+
+            margin: 40px auto;
+        }
+
+
+        /* =====================================================
+           PAGE HEADING
+        ===================================================== */
+
+        h1 {
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-size: 32px;
+        }
+
+
+        /* =====================================================
+           ADD EMPLOYEE SECTION
+        ===================================================== */
+
+        .add-section {
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================================================
+           ADD EMPLOYEE BUTTON
+        ===================================================== */
+
+        .add-btn {
+            display: inline-block;
+
+            background-color: #00bcd4;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 20px;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            background-color: #0097a7;
+        }
+
+
+        /* =====================================================
+           TABLE CONTAINER
+        ===================================================== */
+
+        .table-container {
+            width: 100%;
+
+            overflow-x: auto;
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =====================================================
+           TABLE
+        ===================================================== */
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            background-color: white;
+        }
+
+
+        /* =====================================================
+           TABLE HEADER
+        ===================================================== */
+
+        th {
+            background-color: #222;
+
+            color: white;
+
+            padding: 12px;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           TABLE DATA
+        ===================================================== */
+
+        td {
+            padding: 10px;
+
+            text-align: center;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        /* =====================================================
+           TABLE ROW HOVER
+        ===================================================== */
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+
+        /* =====================================================
+           ACTIONS
+        ===================================================== */
+
+        .actions {
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           EDIT / DELETE BUTTONS
+        ===================================================== */
+
+        .edit-btn,
+        .delete-btn {
+            display: inline-block;
+
+            padding: 7px 12px;
+
+            margin: 2px;
+
+            border-radius: 4px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           EDIT BUTTON
+        ===================================================== */
+
+        .edit-btn {
+            background-color: #222;
+
+            color: white;
+
+            border: 1px solid #222;
+        }
+
+        .edit-btn:hover {
+            background-color: #00bcd4;
+
+            border-color: #00bcd4;
+        }
+
+
+        /* =====================================================
+           DELETE BUTTON
+        ===================================================== */
+
+        .delete-btn {
+            background-color: #222;
+
+            color: white;
+
+            border: 1px solid #222;
+        }
+
+        .delete-btn:hover {
+            background-color: #e53935;
+
+            border-color: #e53935;
+        }
+
+
+        /* =====================================================
+           NO EMPLOYEES MESSAGE
+        ===================================================== */
+
+        .no-employees {
+            padding: 20px;
+
+            text-align: center;
+
+            color: #555;
+
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE DESIGN - TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                flex-direction: column;
+
+                justify-content: center;
+
+                text-align: center;
+            }
+
+            .logo {
+                margin-right: 0;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .theme-buttons {
+                margin-right: 0;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 900px;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE DESIGN - MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 95%;
+
+                margin: 25px auto;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .theme-buttons a {
+                font-size: 13px;
+
+                padding: 7px 10px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body class="{{ theme }}">
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav class="navbar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+            Employee Management System
+        </div>
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <ul class="nav-links">
+
+
+            <!-- HOME -->
+
+            <li>
+                <a href="/home">
+                    Home
+                </a>
+            </li>
+
+
+            <!-- EMPLOYEES -->
+
+            <li>
+                <a href="/employees">
+                    Employees
+                </a>
+            </li>
+
+
+            <!-- ADD EMPLOYEE -->
+
+            <li>
+                <a href="/add-employee">
+                    Add Employee
+                </a>
+            </li>
+
+
+            <!-- SEARCH -->
+
+            <li>
+                <a href="/search">
+                    Search
+                </a>
+            </li>
+
+
+            <!-- LOGIN / LOGOUT -->
+
+            {% if username %}
+
+                <li>
+                    <a href="/logout" class="login-btn">
+                        Logout
+                    </a>
+                </li>
+
+            {% else %}
+
+                <li>
+                    <a href="/login" class="login-btn">
+                        Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/register" class="register-btn">
+                        Register
+                    </a>
+                </li>
+
+            {% endif %}
+
+        </ul>
+
+
+        <!-- THEME BUTTONS -->
+
+        <div class="theme-buttons">
+
+            <a href="/set-theme/light">
+                ☀ Light
+            </a>
+
+            <a href="/set-theme/dark">
+                🌙 Dark
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ===================================================== -->
+
+    <div class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <h1>
+            Employee Details
+        </h1>
+
+
+        <!-- ADD EMPLOYEE -->
+
+        <div class="add-section">
+
+            <a
+                href="/add-employee"
+                class="add-btn"
+            >
+                + Add Employee
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             EMPLOYEE TABLE
+        ================================================= -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Joining Date</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% if employees %}
+
+                        {% for employee in employees %}
+
+                            <tr>
+
+                                <td>
+                                    {{ employee["id"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["name"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["email"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["phone"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["department"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["salary"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["joining_date"] }}
+                                </td>
+
+                                <td>
+                                    {{ employee["address"] }}
+                                </td>
+
+                                <td class="actions">
+
+                                    <!-- EDIT -->
+
+                                    <a
+                                        href="/edit-employee/{{ employee['id'] }}"
+                                        class="edit-btn"
+                                    >
+                                        Edit
+                                    </a>
+
+
+                                    <!-- DELETE -->
+
+                                    <a
+                                        href="/delete-employee/{{ employee['id'] }}"
+                                        class="delete-btn"
+                                        onclick="return confirm('Are you sure you want to delete this employee?');"
+                                    >
+                                        Delete
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+
+                            <td
+                                colspan="9"
+                                class="no-employees"
+                            >
+                                No employees found
+                            </td>
+
+                        </tr>
+
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
