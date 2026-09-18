@@ -384,17 +384,11 @@
 
 <body class="{{ theme }}">
 
-
-    <!-- =========================
-         REGISTER CONTAINER
-    ========================= -->
+    <!--REGISTER CONTAINER -->
 
     <div class="register-container">
 
-
-        <!-- =========================
-             THEME BUTTONS
-        ========================= -->
+        <!-- THEME BUTTONS-->
 
         <div class="theme-buttons">
 
@@ -409,18 +403,17 @@
         </div>
 
 
-        <!-- =========================
-             REGISTRATION HEADING
-        ========================= -->
+        <!--  REGISTRATION HEADING -->
 
         <h1>
             Employee Registration Form
         </h1>
+        {% if error %}
+        <p style="color: red; text-align: center;">{{ error }}</p>
+        {% endif %}
 
 
-        <!-- =========================
-             REGISTRATION FORM
-        ========================= -->
+        <!--  REGISTRATION FORM -->
 
         <form
             id="registrationform"
@@ -431,105 +424,62 @@
 
             <!-- FULL NAME -->
 
-            <label for="fullname">
-                Full Name:
-            </label>
+            <div class="form-group">
 
-            <input
-                id="fullname"
-                type="text"
-                name="fullname"
-                placeholder="Enter your fullname"
-                required
-            >
+                <label for="fullname">Full Name: </label>
 
+                <input id="fullname" type="text" name="fullname" placeholder="Enter your fullname" required>
+            </div>
 
             <!-- USERNAME -->
 
-            <label for="username">
-                Username:
-            </label>
+            <div class="form-group">
 
-            <input
-                id="username"
-                type="text"
-                name="username"
-                placeholder="Enter your username"
-                required
-            >
+                <label for="username">Username:</label>
 
+                <input id="username" type="text" name="username" placeholder="Enter your username" required>
+
+            </div>
 
             <!-- PASSWORD -->
 
-            <label for="password">
-                Password:
-            </label>
+            <div class="form-group">
 
-            <input
-                id="password"
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                required
-            >
+                <label for="password"> Password:</label>
 
+                <input id="password" type="password" name="password" placeholder="Enter your password" required>
 
-            <!-- =========================
-                 REGISTER & RESET BUTTONS
-            ========================= -->
+            </div>
+            
+            <!-- Buttons -->
 
             <div class="buttons">
 
-                <input
-                    type="submit"
-                    value="Register"
-                >
+                <input type="submit" value="Register">
 
-                <button
-                    type="button"
-                    onclick="resetForm()"
-                >
-                    Reset
-                </button>
+                <button type="button" onclick="resetForm()"> Reset</button>
 
             </div>
+        
+        </form>
 
+        <!-- LOGIN LINK -->
 
-            <!-- =========================
-                 LOGIN LINK
-            ========================= -->
+        <div class="login-link">
 
-            <div class="login-link">
+            Already have an account?
 
-                Already have an account?
-
-                <a href="/login">
-                    Login
+            <a href="/login">Login
                 </a>
 
-            </div>
+        </div>
 
 
-            <!-- =========================
-                 HOME LINK
-            ========================= -->
-
-            <a
-                href="/"
-                class="home-link"
-            >
-                ← Back to Home
-            </a>
-
-
-        </form>
 
     </div>
 
 
-    <!-- =========================
-         RESET FORM SCRIPT
-    ========================= -->
+    <!-- RESET FORM SCRIPT-->
 
     <script>
 
@@ -543,4 +493,4 @@
 
 </body>
 
-</html>
+</html

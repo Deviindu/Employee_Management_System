@@ -9,9 +9,7 @@
 
     <style>
 
-        /* =====================================================
-           RESET
-        ===================================================== */
+        /*RESET */
 
         * {
             margin: 0;
@@ -20,9 +18,7 @@
         }
 
 
-        /* =====================================================
-           BODY
-        ===================================================== */
+        /*BODY*/
 
         body {
             font-family: Arial, sans-serif;
@@ -31,9 +27,7 @@
         }
 
 
-        /* =====================================================
-           LIGHT MODE
-        ===================================================== */
+        /* LIGHT MODE */
 
         body.light {
             background-color: #f5f5f5;
@@ -60,10 +54,8 @@
             color: #333;
         }
 
-
-        /* =====================================================
-           DARK MODE
-        ===================================================== */
+        
+        /*DARK MODE*/
 
         body.dark {
             background-color: #121212;
@@ -99,25 +91,19 @@
         }
 
 
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
+        /* NAVBAR */
 
         .navbar {
             background-color: #222;
             padding: 15px 30px;
-
             display: flex;
             align-items: center;
-
             flex-wrap: wrap;
             gap: 15px;
         }
 
 
-        /* =====================================================
-           LOGO
-        ===================================================== */
+        /*LOGO */
 
         .logo {
             color: white;
@@ -128,26 +114,20 @@
         }
 
 
-        /* =====================================================
-           NAVIGATION LINKS
-        ===================================================== */
+        /* NAVIGATION LINKS */
 
         .nav-links {
             display: flex;
             align-items: center;
-
             list-style: none;
             gap: 20px;
-
             flex-wrap: wrap;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-
             font-size: 16px;
-
             transition: 0.3s;
         }
 
@@ -156,9 +136,7 @@
         }
 
 
-        /* =====================================================
-           LOGIN BUTTON
-        ===================================================== */
+        /*  LOGIN BUTTON */
 
         .login-btn {
             border: 1px solid #00bcd4;
@@ -173,13 +151,10 @@
         }
 
 
-        /* =====================================================
-           REGISTER BUTTON
-        ===================================================== */
+        /* REGISTER BUTTON*/
 
         .register-btn {
             background-color: #00bcd4;
-
             padding: 8px 15px;
             border-radius: 5px;
         }
@@ -190,14 +165,11 @@
         }
 
 
-        /* =====================================================
-           THEME BUTTONS
-        ===================================================== */
+        /* THEME BUTTONS */
 
         .theme-buttons {
             display: flex;
             align-items: center;
-
             gap: 10px;
             margin-right: 5px;
         }
@@ -205,14 +177,10 @@
         .theme-buttons a {
             color: white;
             text-decoration: none;
-
             border: 1px solid #00bcd4;
-
             padding: 8px 12px;
             border-radius: 5px;
-
             font-size: 14px;
-
             transition: 0.3s;
         }
 
@@ -222,85 +190,60 @@
         }
 
 
-        /* =====================================================
-           FORM CONTAINER
-        ===================================================== */
+        /* FORM CONTAINER*/
 
         .container {
             width: 500px;
             max-width: 90%;
-
             margin: 40px auto;
             padding: 30px;
-
             background-color: white;
-
             border-radius: 8px;
-
             box-shadow:
                 0 4px 12px rgba(0, 0, 0, 0.15);
-
             transition:
                 background-color 0.3s,
                 color 0.3s;
         }
 
 
-        /* =====================================================
-           HEADING
-        ===================================================== */
+        /*HEADING */
 
         h1 {
             text-align: center;
-
             color: #222;
-
             margin-bottom: 25px;
         }
 
 
-        /* =====================================================
-           FORM
-        ===================================================== */
+        /* FORM */
 
         form {
             width: 100%;
         }
 
 
-        /* =====================================================
-           LABEL
-        ===================================================== */
+        /* LABEL*/
 
         label {
             display: block;
-
             margin-top: 15px;
             margin-bottom: 6px;
-
             font-weight: bold;
             color: #333;
         }
 
 
-        /* =====================================================
-           INPUT AND TEXTAREA
-        ===================================================== */
+        /* INPUT AND TEXTAREA */
 
-        input,
-        textarea {
+        input,textarea {
             width: 100%;
-
             padding: 10px;
-
             border: 1px solid #aaa;
             border-radius: 5px;
-
             font-size: 15px;
             font-family: Arial, sans-serif;
-
             outline: none;
-
             transition:
                 background-color 0.3s,
                 color 0.3s,
@@ -308,9 +251,7 @@
         }
 
 
-        /* =====================================================
-           INPUT FOCUS
-        ===================================================== */
+        /*INPUT FOCUS */
 
         input:focus,
         textarea:focus {
@@ -318,37 +259,25 @@
         }
 
 
-        /* =====================================================
-           TEXTAREA
-        ===================================================== */
-
+        /*TEXTAREA*/
         textarea {
             height: 80px;
             resize: vertical;
         }
 
 
-        /* =====================================================
-           UPDATE BUTTON
-        ===================================================== */
+        /*UPDATE BUTTON*/
 
         .update-btn {
             width: 100%;
-
             padding: 11px;
-
             margin-top: 25px;
-
             background-color: #222;
             color: white;
-
             border: 1px solid #222;
             border-radius: 5px;
-
             font-size: 16px;
-
             cursor: pointer;
-
             transition: 0.3s;
         }
 
@@ -358,23 +287,15 @@
         }
 
 
-        /* =====================================================
-           BACK BUTTON
-        ===================================================== */
+        /* BACK BUTTON*/
 
         .back-btn {
             display: block;
-
             text-align: center;
-
             margin-top: 15px;
-
             color: #222;
-
             text-decoration: none;
-
             font-size: 15px;
-
             transition: 0.3s;
         }
 
@@ -382,10 +303,7 @@
             color: #00bcd4;
         }
 
-
-        /* =====================================================
-           DARK MODE BACK BUTTON
-        ===================================================== */
+        /*DARK MODE BACK BUTTON */
 
         body.dark .back-btn {
             color: #ddd;
@@ -465,89 +383,15 @@
 <body class="{{ theme }}">
 
 
-    <!-- =====================================================
-         NAVBAR
-    ===================================================== -->
+    <!-- NAVBAR -->
 
     <nav class="navbar">
-
 
         <!-- LOGO -->
 
         <div class="logo">
             Employee Management System
         </div>
-
-
-        <!-- NAVIGATION LINKS -->
-
-        <ul class="nav-links">
-
-
-            <!-- HOME -->
-
-            <li>
-                <a href="/">
-                    Home
-                </a>
-            </li>
-
-
-            <!-- EMPLOYEES -->
-
-            <li>
-                <a href="/employees">
-                    Employees
-                </a>
-            </li>
-
-
-            <!-- ADD EMPLOYEE -->
-
-            <li>
-                <a href="/add-employee">
-                    Add Employee
-                </a>
-            </li>
-
-
-            <!-- SEARCH -->
-
-            <li>
-                <a href="/search">
-                    Search
-                </a>
-            </li>
-
-
-            <!-- LOGIN / LOGOUT -->
-
-            {% if username %}
-
-                <li>
-                    <a href="/logout">
-                        Logout
-                    </a>
-                </li>
-
-            {% else %}
-
-                <li>
-                    <a href="/login" class="login-btn">
-                        Login
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/register" class="register-btn">
-                        Register
-                    </a>
-                </li>
-
-            {% endif %}
-
-        </ul>
-
 
         <!-- THEME BUTTONS -->
 
@@ -563,138 +407,112 @@
 
         </div>
 
+        <!-- NAVIGATION LINKS -->
+
+        <ul class="nav-links">
+
+
+            <!-- HOME -->
+
+            <li>
+                <a href="/"> Home</a>
+            </li>
+
+            <!-- EMPLOYEES -->
+
+            <li>
+                <a href="/employees"> Employees</a>
+            </li>
+
+            <!-- ADD EMPLOYEE -->
+
+            <li>
+                <a href="/add-employee">Add Employee</a>
+            </li>
+
+            <!-- SEARCH -->
+
+            <li>
+                <a href="/search">Search</a>
+            </li>
+
+            <!-- LOGIN / LOGOUT -->
+
+            
+
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+
+            
+
+        </ul>
+
     </nav>
 
-
-    <!-- =====================================================
-         EDIT EMPLOYEE FORM
-    ===================================================== -->
+    <!-- EDIT EMPLOYEE FORM -->
 
     <div class="container">
 
         <h1>Edit Employee</h1>
 
 
-        <form
-            action="/edit-employee/{{ employee['id'] }}"
-            method="POST"
-        >
-
+        <form 
+           action="/edit-employee/{{ employee['id'] }}"
+           method="POST">
 
             <!-- EMPLOYEE NAME -->
 
-            <label>
-                Employee Name
-            </label>
+            <label> Employee Name</label>
 
-            <input
-                type="text"
-                name="name"
-                value="{{ employee['name'] }}"
-                required
-            >
-
+            <input type="text" name="name" value="{{ employee['name'] }}" required >
 
             <!-- EMAIL -->
 
-            <label>
-                Email
-            </label>
+            <label>Email</label>
 
-            <input
-                type="email"
-                name="email"
-                value="{{ employee['email'] }}"
-                required
-            >
-
+            <input type="email" name="email" value="{{ employee['email'] }}" required>
 
             <!-- PHONE -->
 
-            <label>
-                Phone
-            </label>
+            <label>Phone </label>
 
-            <input
-                type="text"
-                name="phone"
-                value="{{ employee['phone'] }}"
-                required
-            >
-
+            <input type="text" name="phone" value="{{ employee['phone'] }}" required>
 
             <!-- DEPARTMENT -->
 
-            <label>
-                Department
-            </label>
+            <label>Department</label>
 
-            <input
-                type="text"
-                name="department"
-                value="{{ employee['department'] }}"
-                required
-            >
-
+            <input type="text" name="department" value="{{ employee['department'] }}" required>
 
             <!-- SALARY -->
+       
+            <label>Salary </label>
 
-            <label>
-                Salary
-            </label>
-
-            <input
-                type="number"
-                name="salary"
-                value="{{ employee['salary'] }}"
-                required
-            >
-
+            <input type="number" name="salary" value="{{ employee['salary'] }}" required>
 
             <!-- JOINING DATE -->
 
-            <label>
-                Joining Date
-            </label>
+            <label> Joining Date</label>
 
-            <input
-                type="date"
-                name="joining_date"
-                value="{{ employee['joining_date'] }}"
-                required
-            >
-
+            <input type="date" name="joining_date" value="{{ employee['joining_date'] }}" required>
 
             <!-- ADDRESS -->
 
-            <label>
-                Address
-            </label>
+            <label>Address </label>
 
-            <textarea
-                name="address"
-                required
-            >{{ employee['address'] or '' }}</textarea>
-
+            <textarea name="address" required>{{ employee['address'] or '' }}</textarea>
 
             <!-- UPDATE BUTTON -->
 
-            <button
-                type="submit"
-                class="update-btn"
-            >
-                Update Employee
-            </button>
+            <button type="submit" class="update-btn">Update Employee</button>
 
         </form>
 
-
         <!-- BACK BUTTON -->
 
-        <a
-            href="/employees"
-            class="back-btn"
-        >
+        <a href="/employees"
+            class="back-btn">
             ← Back to Employees
         </a>
 

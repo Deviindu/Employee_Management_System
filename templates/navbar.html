@@ -9,9 +9,7 @@
 
     <style>
 
-        /* =========================
-           RESET
-        ========================= */
+        /* RESET */
 
         * {
             margin: 0;
@@ -19,19 +17,13 @@
             box-sizing: border-box;
         }
 
-
-        /* =========================
-           BODY
-        ========================= */
+        /* BODY */
 
         body {
             font-family: Arial, sans-serif;
         }
 
-
-        /* =========================
-           LIGHT MODE
-        ========================= */
+        /*LIGHT MODE */
 
         body.light {
             background-color: #f5f5f5;
@@ -51,10 +43,7 @@
             color: #555;
         }
 
-
-        /* =========================
-           DARK MODE
-        ========================= */
+        /*DARK MODE */
 
         body.dark {
             background-color: #121212;
@@ -74,10 +63,7 @@
             color: #ddd;
         }
 
-
-        /* =========================
-           NAVBAR
-        ========================= */
+        /* NAVBAR */
 
         .navbar {
             background-color: #222;
@@ -87,47 +73,32 @@
             align-items: center;
         }
 
-
-        /* =========================
-           LOGO
-        ========================= */
+        /* LOGO */
 
         .logo {
             color: white;
             font-size: 22px;
             font-weight: bold;
-
             margin-right: auto;
-
             white-space: nowrap;
         }
 
-
-        /* =========================
-           THEME BUTTONS
-        ========================= */
+        /*THEME BUTTONS */
 
         .theme-buttons {
             display: flex;
             align-items: center;
-
             gap: 10px;
             margin-right: 20px;
         }
 
         .theme-buttons a {
             color: white;
-
             text-decoration: none;
-
             border: 1px solid #00bcd4;
-
             padding: 8px 12px;
-
             border-radius: 5px;
-
             font-size: 14px;
-
             transition: 0.3s;
         }
 
@@ -136,27 +107,19 @@
             color: white;
         }
 
-
-        /* =========================
-           NAVIGATION LINKS
-        ========================= */
+        /*NAVIGATION LINKS */
 
         .nav-links {
             display: flex;
             align-items: center;
-
             list-style: none;
-
             gap: 20px;
         }
 
         .nav-links a {
             color: white;
-
             text-decoration: none;
-
             font-size: 16px;
-
             transition: 0.3s;
         }
 
@@ -164,16 +127,11 @@
             color: #00bcd4;
         }
 
-
-        /* =========================
-           LOGIN BUTTON
-        ========================= */
+        /* LOGIN BUTTON */
 
         .login-btn {
             border: 1px solid #00bcd4;
-
             padding: 8px 15px;
-
             border-radius: 5px;
         }
 
@@ -182,16 +140,11 @@
             color: white !important;
         }
 
-
-        /* =========================
-           REGISTER BUTTON
-        ========================= */
+        /* REGISTER BUTTON */
 
         .register-btn {
             background-color: #00bcd4;
-
             padding: 8px 15px;
-
             border-radius: 5px;
         }
 
@@ -201,13 +154,10 @@
         }
 
 
-        /* =========================
-           CONTENT
-        ========================= */
+        /* CONTENT */
 
         .content {
             padding: 50px;
-
             text-align: center;
         }
 
@@ -219,10 +169,7 @@
             font-size: 18px;
         }
 
-
-        /* =========================
-           MOBILE RESPONSIVE
-        ========================= */
+        /*MOBILE RESPONSIVE*/
 
         @media (max-width: 900px) {
 
@@ -252,28 +199,23 @@
 
 
 <body class="{{ theme }}">
-
-
-    <!-- =========================
-         NAVBAR
-    ========================= -->
+    
+    <!--NAVBAR-->
 
     <nav class="navbar">
 
-
-        <!-- LOGO -->
+        <!--LOGO-->
 
         <div class="logo">
             Employee Management System
         </div>
 
-
-        <!-- THEME BUTTONS -->
+        <!--THEME BUTTONS-->
 
         <div class="theme-buttons">
 
             <a href="/set-theme/light">
-                ☀ Light
+                ☀ Light 
             </a>
 
             <a href="/set-theme/dark">
@@ -282,45 +224,30 @@
 
         </div>
 
-
-        <!-- NAVIGATION LINKS -->
+        <!--NAVIGATION LINKS--> 
 
         <ul class="nav-links">
 
             <li>
-                <a href="/home">
-                    Home
-                </a>
+                <a href="/">Home</a>
             </li>
 
             <li>
-                <a href="/employees">
-                    Employees
-                </a>
+                <a href="/employees">Employees</a>
             </li>
 
             <li>
-                <a href="/add-employee">
-                    Add Employee
-                </a>
+                <a href="/add-employee">Add Employee</a>
             </li>
 
             <li>
-                <a href="/search">
-                    Search
-                </a>
+                <a href="/search">Search</a>
             </li>
 
-            <li>
-                <a href="/login" class="login-btn">
-                    Login
-                </a>
-            </li>
+            <!-- LOGOUT -->
 
             <li>
-                <a href="/register" class="register-btn">
-                    Register
-                </a>
+                <a href="/logout" class="logout-button">Logout</a>
             </li>
 
         </ul>
@@ -328,18 +255,27 @@
     </nav>
 
 
-    <!-- =========================
-         CONTENT
-    ========================= -->
-
+    <!--CONTENT-->
+    
     <div class="content">
 
-        <h1>
-            Welcome to Employee Management System
-        </h1>
+      {% if fullname %}
+
+            <h1>
+                Welcome, {{ fullname }}!
+            </h1>
+
+        {% else %}
+
+            <h1>
+                Welcome to Employee Management System
+            </h1>
+
+        {% endif %}
+
 
         <p>
-            Manage your employees easily
+            Manage your employees easily.
         </p>
 
     </div>

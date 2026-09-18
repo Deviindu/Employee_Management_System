@@ -10,6 +10,7 @@
     <style>
 
       /*RESET*/
+
       * {
         margin: 0;
         padding: 0;
@@ -17,233 +18,245 @@
       }
 
       /* BODY*/
+
       body {
-          font-family: Arial, sans-serif;
-          min-height: 100vh;
-          transition: background-color 0.3s, color 0.3s;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        transition: background-color 0.3s, color 0.3s;
       }
 
-        /* LIGHT MODE*/
+      /* LIGHT MODE*/
+
       body.light {
-          background-color: #f5f5f5;
-          color: #222;
+        background-color: #f5f5f5;
+        color: #222;
       }
 
       body.light .container {
-          background-color: white;
-          color: #222;
+        background-color: white;
+        color: #222;
       }
 
       body.light h1 {
-          color: #222;
+        color: #222;
       }
 
       body.light input,
       body.light select,
       body.light textarea {
-          background-color: white;
-          color: #222;
-          border: 1px solid #ccc;
+        background-color: white;
+        color: #222;
+        border: 1px solid #ccc;
       }
 
       /* DARK MODE*/
+
       body.dark {
-          background-color: #121212;
-          color: white;
+        background-color: #121212;
+        color: white;
       }
 
       body.dark .container {
-          background-color: #1e1e1e;
-          color: white;
+        background-color: #1e1e1e;
+        color: white;
 
           box-shadow:
-                0 2px 10px rgba(255, 255, 255, 0.08);
+            0 2px 10px rgba(255, 255, 255, 0.08);
       }
 
       body.dark h1 {
-          color: white;
+        color: white;
       }
 
       body.dark label {
-          color: white;
+        color: white;
       }
 
       body.dark input,
       body.dark select,
       body.dark textarea {
-          background-color: #2b2b2b;
-          color: white;
-          border: 1px solid #555;
+        background-color: #2b2b2b;
+        color: white;
+        border: 1px solid #555;
       }
 
       body.dark input::placeholder,
       body.dark textarea::placeholder {
-          color: #aaa;
+        color: #aaa;
       }
 
       body.dark option {
-          background-color: #2b2b2b;
-          color: white;
+        background-color: #2b2b2b;
+        color: white;
       }
 
 
       /*NAVBAR*/
+
       .navbar {
-          background-color: #222;
-          padding: 15px 30px;
-
-          display: flex;
-          align-items: center;
-
-          flex-wrap: wrap;
-          gap: 15px;
+        background-color: #222;
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
       }
 
       /*LOGO*/
 
       .logo {
-          color: white;
-          font-size: 22px;
-          font-weight: bold;
-          margin-right: auto;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        margin-right: auto;
       }
 
       /* NAVIGATION LINKS */
+
       .nav-links {
-          display: flex;
-          align-items: center;
-          list-style: none;
-          gap: 20px;
-          flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 20px;
+        flex-wrap: wrap;
       }
 
       .nav-links a {
-          color: white;
-          text-decoration: none;
-          font-size: 16px;
-          transition: 0.3s;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
       }
 
       .nav-links a:hover {
-          color: #00bcd4;
+        color: #00bcd4;
       }
 
 
       /* LOGIN BUTTON*/
       .login-btn {
-          border: 1px solid #00bcd4;
-          padding: 8px 15px;
-          border-radius: 5px;
+        border: 1px solid #00bcd4;
+        padding: 8px 15px;
+        border-radius: 5px;
       }
 
       .login-btn:hover {
-          background-color: #00bcd4;
-          color: white !important;
+        background-color: #00bcd4;
+        color: white !important;
       }
 
       /* REGISTER BUTTON */
       .register-btn {
-          background-color: #00bcd4;
-          padding: 8px 15px;
-          border-radius: 5px;
+        background-color: #00bcd4;
+        padding: 8px 15px;
+        border-radius: 5px;
       }
 
       .register-btn:hover {
-          background-color: #0097a7;
-          color: white !important;
+        background-color: #0097a7;
+        color: white !important;
       }
 
       /*  THEME BUTTONS */
       .theme-buttons {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-right: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 5px;
       }
 
       .theme-buttons a {
-          color: white;
-          text-decoration: none;
-          border: 1px solid #00bcd4;
-          padding: 8px 12px;
-          border-radius: 5px;
-          font-size: 14px;
-          transition: 0.3s;
+        color: white;
+        text-decoration: none;
+        border: 1px solid #00bcd4;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: 0.3s;
       }
 
       .theme-buttons a:hover {
-          background-color: #00bcd4;
-          color: white;
+        background-color: #00bcd4;
+        color: white;
       }
 
       /*  FORM CONTAINER*/
+
       .container {
-          width: 600px;
-          max-width: 90%;
-          margin: 40px auto;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow:
-              0 2px 10px rgba(0, 0, 0, 0.1);
-          transition:
-              background-color 0.3s,
-              color 0.3s;
+        width: 600px;
+        max-width: 90%;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow:
+            0 2px 10px rgba(0, 0, 0, 0.1);
+        transition:
+            background-color 0.3s,
+            color 0.3s;
       }
 
       /* HEADING */
+
       h1 {
-          text-align: center;
-          margin-bottom: 25px;
+        text-align: center;
+        margin-bottom: 25px;
       }
 
       /* FORM ROW */
+
       .row {
-          display: flex;
-          gap: 20px;
+        display: flex;
+        gap: 20px;
       }
 
       /* FORM GROUP */
+
       .form-group {
-          flex: 1;
+        flex: 1;
       }
 
       /* LABEL */
+
       label {
-          display: block;
-          margin-top: 15px;
-          margin-bottom: 5px;
-          font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
       }
 
       /*  INPUT / SELECT / TEXTAREA*/
+
       input,select,textarea {
-          width: 100%;
-          padding: 10px;
-          border-radius: 5px;
-          font-size: 15px;
-          outline: none;
-          transition:
-              background-color 0.3s,
-              color 0.3s,
-              border-color 0.3s;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 15px;
+        outline: none;
+        transition:
+            background-color 0.3s,
+            color 0.3s,
+            border-color 0.3s;
       }
 
-        input:focus,select:focus,textarea:focus {
-          border-color: #00bcd4;
+      input:focus,select:focus,textarea:focus {
+        border-color: #00bcd4;
       }
 
       /* TEXTAREA */
+
       textarea {
           height: 100px;
           resize: vertical;
       }
 
       /*BUTTON CONTAINER */
+
       .buttons {
           width: 100%;
       }
 
       /*  ADD EMPLOYEE BUTTON */
+
       .add-btn {
           width: 100%;
           margin-top: 25px;
@@ -262,6 +275,7 @@
       }
 
       /*RESET BUTTON*/
+
       .reset-btn {
           width: 100%;
           margin-top: 10px;
@@ -283,55 +297,55 @@
 
       @media (max-width: 900px) {
 
-      .navbar {
+        .navbar {
             flex-direction: column;
             justify-content: center;
             text-align: center;
         }
 
-      .logo {
+        .logo {
             margin-right: 0;
         }
 
-      .theme-buttons {
+        .theme-buttons {
             margin-right: 0;
         }
 
-      .nav-links {
+        .nav-links {
             justify-content: center;
         }
       }
 
-      /*  RESPONSIVE DESIGN - MOBILE */
+      /*RESPONSIVE DESIGN - MOBILE */
 
       @media (max-width: 600px) {
 
-      .container {
+        .container {
             width: 95%;
             max-width: 95%;
             margin: 25px auto;
             padding: 20px;
         }
 
-      .row {
+        .row {
             flex-direction: column;
             gap: 0;
         }
 
-      .nav-links {
+        .nav-links {
             gap: 10px;
         }
 
-      .nav-links a {
+        .nav-links a {
             font-size: 14px;
         }
 
-      .theme-buttons a {
+        .theme-buttons a {
             font-size: 13px;
             padding: 7px 10px;
         }
 
-      .logo {
+        .logo {
             font-size: 18px;
         }
       }
@@ -342,289 +356,117 @@
 
 <body class="{{ theme }}">
 
-    # NAVBAR
+    <!--NAVBAR-->
+
     <nav class="navbar">
+
+        <!--logo-->
+
         <div class="logo">
             Employee Management System
         </div>
 
-        <!-- NAVIGATION LINKS -->
-        <ul class="nav-links">
+        <!--THEME BUTTONS -->
 
-            <!-- HOME -->
-            <li>
-                <a href="/home">
-                    Home
-                </a>
-            </li>
-
-
-            <!-- EMPLOYEES -->
-            <li>
-                <a href="/employees">
-                    Employees
-                </a>
-            </li>
-
-
-            <!-- ADD EMPLOYEE -->
-            <li>
-                <a href="/add-employee">
-                    Add Employee
-                </a>
-            </li>
-
-
-            <!-- SEARCH -->
-            <li>
-                <a href="/search">
-                    Search
-                </a>
-            </li>
-
-
-            <!-- LOGIN / LOGOUT -->
-            {% if username %}
-
-                <li>
-                    <a href="/logout">
-                        Logout
-                    </a>
-                </li>
-
-            {% else %}
-
-                <li>
-                    <a href="/login" class="login-btn">
-                        Login
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/register" class="register-btn">
-                        Register
-                    </a>
-                </li>
-
-            {% endif %}
-
-        </ul>
-
-
-        <!-- THEME BUTTONS -->
         <div class="theme-buttons">
 
-            <a href="/set-theme/light">
-                ☀ Light
-            </a>
+            <a href="/set-theme/light">☀ Light</a>
 
-            <a href="/set-theme/dark">
-                🌙 Dark
-            </a>
+            <a href="/set-theme/dark">🌙 Dark</a>
 
         </div>
 
+        <!--NAVIGATION LINKS--> 
+
+        <ul class="nav-links">
+
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/employees">Employees</a>
+            </li>
+
+            <li>
+                <a href="/search">Search</a>
+            </li>
+
+          
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+
+
+        </ul>
+
     </nav>
 
-
-    <!-- =====================================================
-         ADD EMPLOYEE FORM
-    ===================================================== -->
+    <!--ADD EMPLOYEE FORM-->
 
     <div class="container">
 
         <h1>Add-Employee</h1>
 
-
         <form action="/add-employee" method="POST">
 
-            <!-- NAME + EMAIL -->
-            <div class="row">
+          <!--  EMPLOYEE NAME -->
 
-                <div class="form-group">
+          <label for="name"> Employee Name:</label>
 
-                    <label for="name">
-                        Employee Name:
-                    </label>
+          <input id="name" type="text" placeholder="Enter your name" name="name" required>
 
-                    <input
-                        id="name"
-                        type="text"
-                        placeholder="Enter your name"
-                        name="name"
-                        required
-                    >
+          <!-- EMAIL-->
 
-                </div>
+          <label for="email">Email:</label>
 
+          <input id="email" type="email" placeholder="Enter your email" name="email" required>
 
-                <div class="form-group">
+          <!-- PHONE-->      
 
-                    <label for="email">
-                        Email:
-                    </label>
+          <label for="phone"> Phone Number: </label>
 
-                    <input
-                        id="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        name="email"
-                        required
-                    >
+          <input id="phone"type="tel" placeholder="Enter your phone number" name="phone" required >
 
-                </div>
+          <!-- DEPARTMENT -->
 
-            </div>
+          <label for="department"> Department:</label>
 
+          <select id="department" name="department" required>
 
-            <!-- PHONE + DEPARTMENT -->
-            <div class="row">
+            <option value=""> Select Department</option>
+            <option value="IT">IT</option>
+            <option value="HR"> HR</option>
+            <option value="Marketing"> Marketing</option>
+            <option value="Sales">Sales</option>
+            <option value="Finance">Finance</option>
 
-                <div class="form-group">
+          </select>
 
-                    <label for="phone">
-                        Phone Number:
-                    </label>
+          <!-- SALARY-->
 
-                    <input
-                        id="phone"
-                        type="tel"
-                        placeholder="Enter your phone number"
-                        name="phone"
-                        required
-                    >
+          <label for="salary">Salary:</label>
 
-                </div>
+          <input id="salary" type="number" placeholder="Enter your salary" name="salary" min="0" required>
 
+          <!--JOINING DATE -->
 
-                <div class="form-group">
+          <label for="joining_date">Joining Date:</label>
 
-                    <label for="department">
-                        Department:
-                    </label>
+          <input id="joining_date" type="Date" name="joining_date" required>
 
-                    <select
-                        id="department"
-                        name="department"
-                        required
-                    >
+          <!--  ADDRESS-->      
 
-                        <option value="">
-                            Select Department
-                        </option>
+          <label for="address">Address:</label>
 
-                        <option value="IT">
-                            IT
-                        </option>
+          <textarea id="address" name="address" rows="4" cols="30" placeholder="Enter your address"></textarea>
 
-                        <option value="HR">
-                            HR
-                        </option>
+          <!--BUTTONS-->
 
-                        <option value="Marketing">
-                            Marketing
-                        </option>
+          <button type="submit" class="add-btn"> Add Employee</button>
 
-                        <option value="Sales">
-                            Sales
-                        </option>
-
-                        <option value="Finance">
-                            Finance
-                        </option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-
-            <!-- SALARY + JOINING DATE -->
-            <div class="row">
-
-                <div class="form-group">
-
-                    <label for="salary">
-                        Salary:
-                    </label>
-
-                    <input
-                        id="salary"
-                        type="number"
-                        placeholder="Enter your salary"
-                        name="salary"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="joining_date">
-                        Joining Date:
-                    </label>
-
-                    <input
-                        id="joining_date"
-                        type="Date"
-                        name="joining_date"
-                        required
-                    >
-
-                </div>
-
-            </div>
-
-
-            <!-- ADDRESS -->
-            <div class="row">
-
-                <div class="form-group">
-
-                    <label for="address">
-                        Address:
-                    </label>
-
-                    <textarea
-                        id="address"
-                        name="address"
-                        rows="4"
-                        cols="30"
-                        placeholder="Enter your address"
-                    ></textarea>
-
-                    <br><br>
-
-                </div>
-
-            </div>
-
-
-            <!-- BUTTONS -->
-            <div class="row">
-
-                <div class="buttons">
-
-                    <button
-                        type="submit"
-                        class="add-btn"
-                    >
-                        Add Employee
-                    </button>
-
-
-                    <button
-                        type="reset"
-                        class="reset-btn"
-                    >
-                        Reset
-                    </button>
-
-                </div>
-
-            </div>
+          <button type="reset" class="reset-btn">Reset</button>
 
         </form>
 

@@ -276,7 +276,7 @@
     <div class="login-container">
 
 
-        <!-- ================= THEME BUTTONS ================= -->
+        <!--THEME BUTTONS -->
 
         <div class="theme-buttons">
 
@@ -290,55 +290,35 @@
 
         </div>
 
-
-        <!-- ================= LOGIN HEADING ================= -->
+        <!--  LOGIN HEADING -->
 
         <h1>Login page</h1>
 
+        {% if error %}
+    <p style="color: red; text-align: center;">{{ error }}</p>
+{% endif %}
 
-        <!-- ================= LOGIN FORM ================= -->
+        <!--  LOGIN FORM  -->
 
         <form action="/login" method="POST">
 
             <!-- Username -->
 
-            <label for="username">
-                Username:
-            </label>
+            <label for="username">Username:</label>
 
-            <input
-                id="username"
-                type="text"
-                name="username"
-                placeholder="Enter your username"
-                required
-            >
-
+            <input id="username" type="text" name="username" placeholder="Enter your username" required >
 
             <!-- Password -->
 
-            <label for="password">
-                Password:
-            </label>
+            <label for="password"> Password:</label>
 
-            <input
-                id="password"
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                required
-            >
-
+            <input id="password" type="password" name="password" placeholder="Enter your password" required>
 
             <!-- Login Button -->
 
-            <input
-                type="submit"
-                value="Login"
-            >
+            <input type="submit" value="Login">
 
         </form>
-
 
         <!-- ================= REGISTER ================= -->
 
@@ -351,13 +331,6 @@
             </a>
 
         </div>
-
-
-        <!-- ================= HOME ================= -->
-
-        <a href="/" class="home-link">
-            ← Back to Home
-        </a>
 
 
     </div>
