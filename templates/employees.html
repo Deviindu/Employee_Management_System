@@ -151,6 +151,12 @@
             color: #00bcd4;
         }
 
+        .nav-links a.active {
+            color: #00bcd4;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
 
         /* =====================================================
            LOGIN BUTTON
@@ -588,19 +594,13 @@
             <!-- EMPLOYEES -->
 
             <li>
-                <a href="/employees">Employees</a>
+                <a href="/employees" class="active">Employees</a>
             </li>
 
             <!-- ADD EMPLOYEE -->
 
             <li>
                 <a href="/add-employee">Add Employee</a>
-            </li>
-
-            <!-- SEARCH -->
-
-            <li>
-                <a href="/search">Search</a>
             </li>
 
         </ul>
@@ -677,7 +677,7 @@
                         <tr>
 
                             <td>
-                                {{ employee["id"] }}
+                                {{ loop.index }}
                             </td>
 
                             <td>

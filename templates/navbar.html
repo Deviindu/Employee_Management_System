@@ -127,6 +127,12 @@
             color: #00bcd4;
         }
 
+        .nav-links a.active {
+            color: #00bcd4;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
         /* LOGIN BUTTON */
 
         .login-btn {
@@ -192,6 +198,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+
         }
 
     </style>
@@ -229,7 +236,7 @@
         <ul class="nav-links">
 
             <li>
-                <a href="/">Home</a>
+                <a href="/" class="active">Home</a>
             </li>
 
             <li>
@@ -238,10 +245,6 @@
 
             <li>
                 <a href="/add-employee">Add Employee</a>
-            </li>
-
-            <li>
-                <a href="/search">Search</a>
             </li>
 
             <!-- LOGOUT -->
